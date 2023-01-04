@@ -7,14 +7,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @Singleton
 public class DefaultUserRepository implements UserRepository {
-    private static final List<String> VALID_PROPERTY_NAMES = Arrays.asList("id", "name");
-
     private final EntityManager entityManager;
 
     public DefaultUserRepository(EntityManager entityManager) {

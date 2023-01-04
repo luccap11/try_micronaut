@@ -35,11 +35,10 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")//Configures Hibernate/JPA EntityManagerFactory beans.
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")//Configures SQL DataSource instances using Hikari Connection Pool.
     implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("jakarta.persistence:jakarta.persistence-api")//Add dependency to Jakarta Persistence API.
 
     runtimeOnly("mysql:mysql-connector-java")
-//    implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
-    implementation("jakarta.persistence:jakarta.persistence-api")//Add dependency to Jakarta Persistence API.
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
