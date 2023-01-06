@@ -4,6 +4,8 @@ plugins {
     id("io.micronaut.test-resources") version "3.6.7"
 
     id "io.freefair.lombok" version "6.6.1"
+    id("org.jetbrains.kotlin.jvm") version "1.8.0"
+    id("org.jetbrains.kotlin.kapt") version "1.8.0"
 }
 
 version = "0.1"
@@ -31,6 +33,8 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")//Configures Hibernate/JPA EntityManagerFactory beans.
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")//Configures SQL DataSource instances using Hikari Connection Pool.
     implementation("jakarta.persistence:jakarta.persistence-api")//Add dependency to Jakarta Persistence API.
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 
@@ -49,6 +53,18 @@ micronaut {
     processing {
         incremental(true)
         annotations("com.example.*")
+    }
+}
+tasks {
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
     }
 }
 
