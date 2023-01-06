@@ -10,7 +10,7 @@ plugins {
 version = "0.1"
 group = "com.example"
 
-val kotlinVersion=project.properties.get("kotlinVersion")
+val kotlinVersion= project.properties["kotlinVersion"]
 repositories {
     mavenCentral()
 }
@@ -33,12 +33,12 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")//Configures Hibernate/JPA EntityManagerFactory beans.
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")//Configures SQL DataSource instances using Hikari Connection Pool.
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("jakarta.persistence:jakarta.persistence-api")//Add dependency to Jakarta Persistence API.
 
     runtimeOnly("mysql:mysql-connector-java")
-    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 

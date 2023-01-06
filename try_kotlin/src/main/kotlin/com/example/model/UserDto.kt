@@ -3,7 +3,7 @@ package com.example.model
 import javax.persistence.*
 
 @Entity
-@Table(name = "user")//costretto ad aggiungere le ' perche user è una parola riservata per H2
+@Table(name = "user")
 open class UserDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
